@@ -23,7 +23,7 @@ const useSpotify = (
   const wallet = useWallet()
   const connection = new anchor.web3.Connection(SOLANA_HOST)
   const program = getProgramInstance(connection, wallet)
-  
+
   const getSongs = async () => {
     console.log('fetching')
 
@@ -35,7 +35,7 @@ const useSpotify = (
   const newMusic = async () => {
     const randomkey = anchor.web3.Keypair.generate().publicKey;
 
-    let [music_pda] = await anchor.web3.PublicKey.findProgramAddress(
+    let [music_pda] = await anchor.web3.PublicKey.findProgramAddressSync(
       [utf8.encode('music'), randomkey.toBuffer()],
       program.programId,
     )
@@ -59,7 +59,7 @@ const useSpotify = (
     setMusicUrl('')
     setShowUploadMusic(false)
   }
-  
+
   return { newMusic, getSongs }
 }
 

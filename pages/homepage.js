@@ -6,6 +6,7 @@ import Activity from '../components/activity'
 import { useState, useEffect } from 'react'
 import UploadModal from '../components/UploadModal'
 import useSpotify from '../hooks/useSpotify'
+// import { songs } from '../data/songs'
 
 const HomePage = () => {
   const [showUploadMusic, setShowUploadMusic] = useState(false)

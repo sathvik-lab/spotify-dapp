@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import TableRow from './table/tableRow'
 
-const Playlist = ({songs}) => {
+const Playlist = ({ songs }) => {
   return (
     <div className={styles.tableWrapper}>
       <table className={styles.table}>
@@ -16,7 +16,7 @@ const Playlist = ({songs}) => {
           </tr>
         </tbody>
         <tbody className='mb-6 block'></tbody>
-        
+
         {songs.map(song => {
           return <TableRow key={song.id} props={song.account} />
         })}

@@ -9,7 +9,7 @@ import shuffle from "../assets/shuffle.svg"
 import playRounded from "../assets/playRounded.svg"
 import pauseIcon from "../assets/pause.svg"
 
-const PlayerControls = ({songs}) => {
+const PlayerControls = ({ songs }) => {
   const { currentSong, isPlaying, volume, onVolumeChange, timestamp, progress, playNext, playPrevious, isPaused, play, pause, onProgressChange } = useContext(SpotifyContext)
 
   if (!isPlaying) return null
@@ -43,8 +43,8 @@ const PlayerControls = ({songs}) => {
             <Image src={previous} alt='' />
           </div>
 
-        {isPaused ? <div className={styles.playIcon} onClick={play}><Image src={playRounded} alt="" /></div>
-          : <div className={styles.pauseIconStyle} onClick={pause}><Image src={pauseIcon} alt="" /></div>}
+          {isPaused ? <div className={styles.playIcon} onClick={play}><Image src={playRounded} alt="" /></div>
+            : <div className={styles.pauseIconStyle} onClick={pause}><Image src={pauseIcon} alt="" /></div>}
 
           <div onClick={e => playNext(songs)} className={styles.controlIcon}>
             <Image src={next} alt='' />

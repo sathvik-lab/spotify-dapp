@@ -61,7 +61,8 @@ export const SpotifyProvider = ({ children }) => {
 
   const onProgressChange = (e) => {
     const _progress = e.target.value / 100
-    document.querySelector('#audio-element').currentTime = _progress * document.querySelector('#audio-element').duration
+    let temp = document.querySelector('#audio-element')
+    temp.currentTime = _progress * document.querySelector('#audio-element').duration
   }
 
   const onVolumeChange = (e) => {
